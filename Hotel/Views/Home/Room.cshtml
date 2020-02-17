@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Settler>
+
+<div class="bg-primary m-1 p-1"><h4>Комната отеля номер @ViewBag.RoomID</h4></div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form id="addform" asp-action="AddStlr" method="post">
+    <div class="form-group">
+        <label for="">Имя:</label>
+        <input class="form-control" name="FirstName" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Фамилия:</label>
+        <input class="form-control" name="LastName" />
+    </div>
+    <div class="form-group">
+        <label for="ArrivalDate">Дата въезда:</label>
+        <input class="form-control" type="datetime-local" name="ArrivalDate" />
+    </div>
+    <div class="form-group">
+        <label for="DepartureDate">Дата выезда:</label>
+        <input class="form-control" type="datetime-local" name="DepartureDate" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Заселить</button>
+    </div>
+    <br />
+    <br />
+    <table class="table table-sm table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата въезда</th>
+            <th>Дата выезда</th>
+            <th>К оплате</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr><td colspan="6">Тут никого нет</td></tr>
+        }
+        @foreach (Settler sett in Model)
+        {
+            <tr>
+                <td>@sett.ID</td>
+                <td>@sett.FirstName</td>
+                <td>@sett.LastName</td>
+                <td>@sett.ArrivalDate</td>
+                <td>@sett.DepartureDate</td>
+                <td>@(sett.Room.Cost * ((sett.DepartureDate.Day - sett.ArrivalDate.Day) + 1))</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" asp-action="DeparStlr"
+                       asp-route-id="@sett.ID">Выселить</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>

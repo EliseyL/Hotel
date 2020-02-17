@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Room>
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Отель</h4></div>
+
+<div class="text-danger" asp-validation-summary="All"></div>
+
+<table class="table table-sm table-bordered">
+    <tr>
+    <th><a asp-action="Index" asp-route-sortOrder="@ViewBag.IdSort">ID</a></th>
+    <th><a asp-action="Index" asp-route-sortOrder="@ViewBag.TypeSort">Тип комнаты</a></th>
+    <th>Состояние</th>
+    <th><a asp-action="Index" asp-route-sortOrder="@ViewBag.CapacitySort">Вместительность</a></th>
+    <th><a asp-action="Index" asp-route-sortOrder="@ViewBag.CostSort">Цена</a></th>
+    </tr>
+    @if (Model.Count() == 0)
+    {
+        <tr><td colspan="3" class="text-center">Комант нет, забыли построить, извините</td></tr>
+    }
+    else
+    {
+        foreach (Room room in Model)
+        {
+            <tr>
+                <td>@room.ID</td>
+                <td>@room.roomType</td>
+                <td>@room.roomState</td>
+                <td>@room.Capacity</td>
+                <td>@room.Cost</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" asp-action="Room"
+                       asp-route-id="@room.ID">Manage</a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+
+@if (User?.Identity?.IsAuthenticated ?? false)
+{
+    <a asp-controller="Account" asp-action="Logout"
+       class="btn btn-danger">Выход</a>
+}
+

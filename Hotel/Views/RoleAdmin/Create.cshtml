@@ -1,0 +1,14 @@
+﻿@model string
+
+<div class="bg-primary m-1 p-1"><h4>Создание роли</h4></div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="name">Название роли</label>
+        <input name="name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Создать роль</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

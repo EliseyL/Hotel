@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel", "Hotel\Hotel.csproj", "{DDD01DD2-7040-4331-8538-0D8813954FE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Tests", "Hotel.Tests\Hotel.Tests.csproj", "{F15D6FBE-C8A7-4462-9613-A95F3845E610}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD01DD2-7040-4331-8538-0D8813954FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD01DD2-7040-4331-8538-0D8813954FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD01DD2-7040-4331-8538-0D8813954FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD01DD2-7040-4331-8538-0D8813954FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15D6FBE-C8A7-4462-9613-A95F3845E610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15D6FBE-C8A7-4462-9613-A95F3845E610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15D6FBE-C8A7-4462-9613-A95F3845E610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15D6FBE-C8A7-4462-9613-A95F3845E610}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9746677D-3C26-4CDE-80F0-7F2BDF9BA77C}
+	EndGlobalSection
+EndGlobal
